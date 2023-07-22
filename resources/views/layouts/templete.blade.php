@@ -19,6 +19,7 @@
   <link rel="stylesheet" href="{{asset('assets/vendor/animate/animate.css')}}">
 
   <link rel="stylesheet" href="{{asset('assets/css/theme.css')}}">
+  @yield('css')
 </head>
 <body>
 
@@ -45,7 +46,7 @@
 
         <div class="collapse navbar-collapse" id="navbarSupport">
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
+            <li class="nav-item">
               <a class="nav-link" href="{{url('/')}}">Home</a>
             </li>
             <li class="nav-item">
@@ -60,13 +61,18 @@
             <li class="nav-item">
               <a class="nav-link" href="{{url('/contact')}}">Contact</a>
             </li>
-            <li class="nav-item">
+           
 
               {{-- <a class="btn btn-primary ml-lg-3" href="{{url('login')}}">Login</a>
               <a class="btn btn-primary ml-lg-3" href="{{url('register')}}">Register</a> --}}
 
               @if (Auth::check())
                   <!-- Authentication -->
+
+                  <li class="nav-item">
+                    <a class="btn btn-primary ml-lg-3" href="{{url('/myappoinment')}}">Appoinment</a>
+                  </li>
+                  <li class="nav-item">
                   <form method="POST" action="{{ route('logout') }}">
                       @csrf
                   

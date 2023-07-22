@@ -27,6 +27,8 @@ Route::get('/home', [HomeController::class,'redirect']);
 Route::get('/', [HomeController::class,'index']);
 Route::get('/doctor', [HomeController::class,'doctor']);
 Route::post('/appointment', [HomeController::class,'appointment']);
+Route::get('/myappoinment', [HomeController::class,'myappoinment']);
+Route::get('/cancel_appoint/{id}', [HomeController::class,'cancel_appoint']);
 
 // user route end
 
@@ -61,6 +63,7 @@ Route::get('/contact', function () {
 //Admin route start
 Route::get('/add_doctor_view',[AdminController::class,'addview']);
 Route::post('/store_doctor',[AdminController::class,'adddoctor']);
+Route::get('/showappoinment',[AdminController::class,'showappoinment']);
 
 //Admin route end
 

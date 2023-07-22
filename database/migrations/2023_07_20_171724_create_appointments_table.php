@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('doctor_name')->nullable();
             $table->string('speciality')->nullable();
             $table->string('date')->nullable();
-            $table->string('messege')->nullable();
+            $table->string('message')->nullable();
             $table->string('status')->nullable();
             $table->string('user_id')->nullable();
             $table->timestamps();

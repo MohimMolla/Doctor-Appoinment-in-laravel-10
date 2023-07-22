@@ -41,7 +41,7 @@
                 </div>
 
                 <div class="col-12 py-2 wow fadeInUp" data-wow-delay="300ms">
-                    <textarea name="messege" id="message" class="form-control" rows="6" placeholder="Enter message.."></textarea>
+                    <textarea name="message" id="message" class="form-control" rows="6" placeholder="Enter message.."></textarea>
                 </div>
 
             </div>

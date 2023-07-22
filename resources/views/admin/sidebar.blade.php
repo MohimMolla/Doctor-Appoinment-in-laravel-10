@@ -53,9 +53,7 @@
 				</div>
 			</div>
 		</li>
-		{{-- <li class="nav-item nav-category">
-			<span class="nav-link">Navigation</span>
-		</li> --}}
+	
 	
 		<li class="nav-item menu-items">
 			<a class="nav-link" href="{{url('add_doctor_view')}}">
@@ -66,21 +64,14 @@
 			</a>
 		</li>
 		<li class="nav-item menu-items">
-			<a class="nav-link" data-bs-toggle="collapse" href="" aria-expanded="false" aria-controls="">
+			<a class="nav-link" href="{{url('showappoinment')}}">
 				<span class="menu-icon">
-					<i class="mdi mdi-laptop"></i>
+					<i class="mdi mdi-file-document-box"></i>
 				</span>
 				<span class="menu-title">Appoimnents</span>
-			
 			</a>
-			{{-- <div class="collapse" id="ui-basic">
-				<ul class="nav flex-column sub-menu">
-					<li class="nav-item"> <a class="nav-link" href="">Buttons</a></li>
-					<li class="nav-item"> <a class="nav-link" href="{{asset('admin/pages/ui-features/dropdowns.html')}}">Dropdowns</a></li>
-					<li class="nav-item"> <a class="nav-link" href="{{asset('admin/pages/ui-features/typography.html')}}">Typography</a></li>
-				</ul>
-			</div> --}}
 		</li>
+	
 		<li class="nav-item menu-items">
 			<a class="nav-link" href="">
 				<span class="menu-icon">

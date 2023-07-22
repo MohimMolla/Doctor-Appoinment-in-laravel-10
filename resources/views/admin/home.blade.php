@@ -12,7 +12,7 @@
   <head>
    @include('admin.css')
   </head>
-  <body>
+  <body class="">
     <div class="container-scroller">
       
       <!-- partial:partials/_sidebar.html -->

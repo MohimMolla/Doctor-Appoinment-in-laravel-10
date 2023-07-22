@@ -53,7 +53,7 @@ class HomeController extends Controller
         $appoin->speciality =$request->speciality;
         $appoin->date =$request->date;
         $appoin->doctor_name =$request->doctor_name;
-        $appoin->messege =$request->messege;
+        $appoin->message =$request->message;
         $appoin->status ='In Progress';
 
         if(Auth::id()){
@@ -68,5 +68,23 @@ class HomeController extends Controller
     }
 
         
+    }
+       public function  myappoinment(){
+        if (Auth::id()){
+
+           $userid =Auth::user()->id;
+           $appoints=appointment::where("user_id",$userid)->get();
+            return view('user.myappoinment',compact('appoints'));
+        }
+        else{
+            return redirect()->back()->with('message'," You are not a valide in user, please login");
+        }  
+    }
+
+    public function cancel_appoint($id){
+        $data=appointment::find($id);
+        $data->delete();
+        return redirect()->back();
+
     }
 }

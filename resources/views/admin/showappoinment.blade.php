@@ -21,10 +21,10 @@
         @include('admin.sidebar')
         <!-- partial -->
         @include('admin.navbar')
-        <div class="container-fluid page-body-wrapper">
-            <div style="text-align:center " style="padding: 100px">
-                    <table >
-                        <tr style="backgroud-color:balck;">
+        <div class=" page-body-wrapper">
+            <div style="text-align:left" style="padding: 80px; ">
+                    <table class="g-5px" >
+                        <tr style="backgroud-color:balck; gap:5px">
                           <th style="padding:10px; margin-right:5px;">Name</th>
                           <th style="padding:10px; margin-right:5px;">Email</th>
                           <th style="padding:10px; margin-right:5px;">Phone</th>
@@ -33,21 +33,31 @@
                             <th style="padding:10px; margin-right:5px;">Date</th>
                             <th style="padding:10px; margin-right:5px;">Message</th>
                             <th style="padding:10px; margin-right:5px;">Status</th>
-                            <th style="padding:10px; margin-right:5px;">User id</th>
+                            <th style="padding:10px; margin-right:5px;">Approved</th>
                             <th style="padding:10px; margin-right:5px;">Cancel Appoinment</th>
                         </tr>
-                   <tr style="background-color:grey; text-align:center;">
-                  <td>gg</td>
-                  <td>vvv</td>
-                  <td>vv</td>
-                  <td>vv</td>
-                  <td>vv</td>
-                  <td>vv</td>
-                  <td>vv</td>
-                  <td>vv</td>
-                  <td>vv</td>
-                  <td>vv</td>
+
+                        @foreach ($data as $d)
+                            
+                        
+                   <tr style="background-color:grey; text-align:center; gap:5px">
+                  <td>{{$d->name}}</td>
+                  <td>{{$d->email}}</td>
+                  <td>{{$d->phone}}</td>
+                  <td>{{$d->doctor_name}}</td>
+                  <td>{{$d->speciality}}</td>
+                  <td>{{$d->date}}</td>
+                  <td>{{$d->message}}</td>
+                  <td>{{$d->status}}</td>
+                  <td>
+                    <a class="btn btn-success" href="{{url('approved',$d->id)}}">Approved</a>
+                  </td>
+                  <td>
+                    <a class="btn btn-danger" href="{{url('canceled',$d->id)}}">Canceled</a>
+                  </td>
+                  
                 </tr>
+                @endforeach
                         
                 </table>
             </div>

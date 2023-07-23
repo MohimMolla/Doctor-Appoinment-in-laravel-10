@@ -23,12 +23,15 @@ use Illuminate\Support\Facades\Route;
 // })->middleware(['auth', 'verified'])->name('dashboard');
 
 // user route start
-Route::get('/home', [HomeController::class,'redirect']);
-Route::get('/', [HomeController::class,'index']);
-Route::get('/doctor', [HomeController::class,'doctor']);
-Route::post('/appointment', [HomeController::class,'appointment']);
-Route::get('/myappoinment', [HomeController::class,'myappoinment']);
-Route::get('/cancel_appoint/{id}', [HomeController::class,'cancel_appoint']);
+Route::get('/home', [HomeController::class, 'redirect']);
+Route::get('/', [HomeController::class, 'index']);
+Route::get('/doctor', [HomeController::class, 'doctor']);
+// Route::get('/deleted/{id}', [HomeController::class,'Doctordeleted']);
+
+
+Route::post('/appointment', [HomeController::class, 'appointment']);
+Route::get('/myappoinment', [HomeController::class, 'myappoinment']);
+Route::get('/cancel_appoint/{id}', [HomeController::class, 'cancel_appoint']);
 
 // user route end
 
@@ -61,10 +64,17 @@ Route::get('/contact', function () {
 //User route end
 
 //Admin route start
-Route::get('/add_doctor_view',[AdminController::class,'addview']);
-Route::post('/store_doctor',[AdminController::class,'adddoctor']);
-Route::get('/showappoinment',[AdminController::class,'showappoinment']);
+Route::get('/add_doctor_view', [AdminController::class, 'addview']);
+Route::post('/store_doctor', [AdminController::class, 'adddoctor']);
+Route::get('/alldoctor', [AdminController::class, 'alldoctor']);
+Route::get('/editdoctor/{id}', [AdminController::class, 'Editdoctor']);
+Route::post('/updatedoctor/{id}', [AdminController::class, 'Updatedoctor']);
+Route::get('/deleted/{id}', [AdminController::class, 'Doctordeleted']);
+
+Route::get('/showappoinment', [AdminController::class, 'showappoinment']);
+Route::get('/approved/{id}', [AdminController::class, 'Approved']);
+Route::get('/canceled/{id}', [AdminController::class, 'Canceled']);
 
 //Admin route end
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

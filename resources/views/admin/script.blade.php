@@ -21,3 +21,14 @@
 
 		{{-- bootstrap js v=5.3 --}}
 		{{-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script> --}}
+
+    
+    {{-- Alert messege code here --}}
+    <script>
+      // Find the close button element and add a click event listener
+      document.getElementById('closeButton').addEventListener('click', function () {
+              // Find the success message element and hide it when the button is clicked
+              var successMessage = document.getElementById('successMessage');
+              successMessage.style.display = 'none';
+      });
+</script>

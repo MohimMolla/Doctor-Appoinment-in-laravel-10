@@ -12,6 +12,12 @@
 
 <head>
     @include('admin.css')
+    <style>
+        table, th, td {
+    border: 2px rgb(43, 31, 31) solid;
+    padding: 2px;
+  }
+      </style>
 </head>
 
 <body>
@@ -26,15 +32,15 @@
 
             <div style="text-align:left" style="padding: 80px; ">
 
-													@if (session()->has('message'))
-													<div class="alert alert-success alert-dismissible fade show" role="alert">
-																	<p>{{ session()->get('message') }}</p>
-																	<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-																					<span aria-hidden="true">&times;</span>
-																	</button>
-													</div>
-									@endif
-									
+                @if (session()->has('message'))
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        <p>{{ session()->get('message') }}</p>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                @endif
+
 
                 <table class="g-5px">
                     <tr style="backgroud-color:balck; gap:5px">

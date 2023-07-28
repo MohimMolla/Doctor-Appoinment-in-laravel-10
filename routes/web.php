@@ -23,7 +23,7 @@ use Illuminate\Support\Facades\Route;
 // })->middleware(['auth', 'verified'])->name('dashboard');
 
 // user route start
-Route::get('/home', [HomeController::class, 'redirect']);
+Route::get('/home', [HomeController::class, 'redirect'])->middleware('auth', 'verified');
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/doctor', [HomeController::class, 'doctor']);
 // Route::get('/deleted/{id}', [HomeController::class,'Doctordeleted']);
@@ -74,6 +74,8 @@ Route::get('/deleted/{id}', [AdminController::class, 'Doctordeleted']);
 Route::get('/showappoinment', [AdminController::class, 'showappoinment']);
 Route::get('/approved/{id}', [AdminController::class, 'Approved']);
 Route::get('/canceled/{id}', [AdminController::class, 'Canceled']);
+Route::get('/emailview/{id}', [AdminController::class, 'emailview']);
+Route::post('/sendemail/{id}', [AdminController::class, 'sendemail']);
 
 //Admin route end
 

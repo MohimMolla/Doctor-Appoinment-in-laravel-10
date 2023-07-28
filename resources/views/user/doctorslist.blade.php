@@ -1,5 +1,6 @@
 @foreach ($doctors as $doctor)
 <div class="item">
+	<a href="">
 		<div class="card-doctor">
 				<div class="header">
 						<img height="300px" src="doctorimage/{{$doctor->image}}" alt="">
@@ -13,5 +14,4 @@
 						<span class="text-sm text-grey">{{ $doctor->speciality }}</span>
 				</div>
 		</div>
-</div>
-@endforeach
+	</a>
